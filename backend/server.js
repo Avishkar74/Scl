@@ -1,6 +1,7 @@
 // Modern Express.js Server - Corporate Level Implementation with Controllers
 import express from 'express'; // ES6 module syntax for modern Node.js
 import dotenv from 'dotenv'; // For environment variable management
+import {connectDB} from './config/db.js';
 
 // Import corporate route modules
 import healthRoutes from './routes/healthRoutes.js';
@@ -8,6 +9,8 @@ import userRoutes from './routes/userRoutes.js';
 
 // Load environment variables from .env file
 dotenv.config();
+
+connectDB();
 
 // Create Express application instance
 const app = express();
